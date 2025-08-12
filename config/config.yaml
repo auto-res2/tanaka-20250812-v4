@@ -1,0 +1,15 @@
+MODEL_ID: "runwayml/stable-diffusion-v1-5"
+PROMPT: "a cyberpunk cat astronaut, highly detailed, futuristic lighting"
+NUM_TRAINING_STEPS: 500
+GRADIENT_ACCUMULATION_STEPS: 4
+BATCH_SIZE: 4
+LEARNING_RATE: 5e-7
+LAMBDA_VLM: 0.1
+LAMBDA_DIST: 0.05
+LAMBDA_CONSISTENCY: 0.02
+NUM_INFERENCE_STEPS: 50
+GUIDANCE_SCALE: 9.0
+SEED: 42
+CONSISTENCY_CHECK_INTERVAL: 5
+PLOT_DIR: ".research/iteration1/images"
+GENERATED_IMAGES_DIR: ".research/iteration1/images/generated_images"
