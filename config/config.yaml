@@ -1,0 +1,28 @@
+experiment:
+  run_id: "default_run"
+  env_name: "halfcheetah"
+  dataset_config: "medium-v2"
+  state_dim: 17
+  action_dim: 6
+  num_samples: 10000
+  eval_episodes: 10
+model:
+  hidden_dim: 256
+  time_embedding_dim: 64
+  feature_dim: 256
+ebm:
+  T: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+training:
+  batch_size: 256
+  ebm_epochs: 100
+  rl_gradient_steps: 100000
+  lr_ebm: 0.0001
+  lr_q: 0.001
+  lr_policy: 0.001
+  gamma: 0.99
+  tau: 0.005
+  lambda_ebm: 1.0
+paths:
+  plot_dir: "./.research/iteration1/images"
