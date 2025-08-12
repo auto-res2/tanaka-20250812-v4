@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/runner/work/tanaka-20250812-v4/tanaka-20250812-v4/src/main.py", line 8, in <module>
+    from transformers import CLIPProcessor, CLIPModel, Dinov2Model, Dinov2Processor
+ImportError: cannot import name 'Dinov2Processor' from 'transformers' (/home/runner/work/_tool/Python/3.11.13/x64/lib/python3.11/site-packages/transformers/__init__.py)
