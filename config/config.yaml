@@ -1,0 +1,50 @@
+# config/experiment_config.yaml
+experiment_params:
+  # General training parameters
+  num_training_steps: 20
+  hrpm_update_interval: 5
+  evaluation_interval: 10
+  seed: 42 # for reproducibility
+
+  # Multi-objective RL parameters
+  lambda_gan: 0.1 # Weight for GAN regularization term
+
+  # Model paths (example, can be updated)
+  pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5"
+
+  # HRPM parameters
+  hrpm:
+    enabled: True # Controls whether HRPM is used in the policy optimization
+    learning_rate: 5e-5
+    clip_model_name: "openai/clip-vit-base-patch16"
+
+  # Discriminator (GAN) parameters
+  discriminator:
+    enabled: True # Controls whether adversarial regularization is used
+    learning_rate: 1e-4
+    img_channels: 3
+    features_d: 64
+
+  # Generator (UNet) parameters
+  generator:
+    learning_rate: 1e-5
+
+  # Output paths
+  image_output_dir: ".research/iteration1/images"
+  plot_output_dir: "plots"
+  model_save_dir: "models"
+
+# Define different experiment configurations (can be selected by a command-line arg in main.py)
+experiments:
+  DDPO Baseline:
+    use_hrpm: False
+    use_gan_regularization: False
+  DDPO + HRPM:
+    use_hrpm: True
+    use_gan_regularization: False
+  DDPO + Adversarial:
+    use_hrpm: False
+    use_gan_regularization: True
+  Full Proposed Framework:
+    use_hrpm: True
+    use_gan_regularization: True
